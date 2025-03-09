@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Roupas Esportivas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/mulher.png" alt="Ícone" class="icone-header">
+        <h1>Woman's Sports Fashion</h1>
+    </header>
+
+      <!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-item">
+        <img src="imagens/login-icon.png" alt="Ícone Login" class="sidebar-icon">
+        <a href="#">Cadastre-se/Login</a>
+    </div>
+    <div class="sidebar-item">
+        <img src="imagens/cart-icon.png" alt="Ícone Carrinho" class="sidebar-icon">
+        <a href="carrinho.html">Carrinho</a>
+    </div>
+</div>
+
+    <section class="background">
+        <h2>Conforto, elegância e qualidade para o estilo feminino!</h2>
+    </section>
+
+    <main>
+        <section class="catalogo">
+            <div class="produto">
+                <img src="/imagens/regata.png" alt="Regata MalhaForm">
+                <h2>Regata MalhaForm</h2>
+                <p class="descricao">Confortável e respirável.</p>
+                <div class="preco-comprar">
+                    <span class="preco">R$ 39,90</span>
+                    <button class="adicionar" onclick="adicionarAoCarrinho('Regata MalhaForm')">Adicionar ao Carrinho</button></div>
+                    </div>
+            </div>
+            <div class="produto">
+                <img src="/imagens/tenis.jpg" alt="Tenis">
+                <h2>Tênis de alta performance</h2>
+                <p class="descricao">Palmilhas com tecnologia UltraP que proporcionam uma pisada flutuante.</p>
+                <div class="preco-comprar">
+                    <span class="preco">R$ 220,00</span>
+                    <button class="adicionar" onclick="adicionarAoCarrinho('Tênis Alta Performance')">Adicionar ao Carrinho</button></div>
+                </div>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="/imagens/legging.webp" alt="Calça Legging Zyn">
+                <h2>Calça Legging Zyn</h2>
+                <p class="descricao">A combinação perfeita entre conforto, estilo e desempenho.</p>
+                <div class="preco-comprar">
+                    <span class="preco">R$ 59,90</span>
+                    <button class="adicionar" onclick="adicionarAoCarrinho('Calça Legging Zyn')">Adicionar ao Carrinho</button></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-item">
+            <img src="imagens/login.png" alt="Cadastre-se/Login" class="sidebar-icon">
+            <a href="#">Cadastre-se/Login</a>
+        </div>
+        <div class="sidebar-item">
+            <img src="imagens/carro.png" alt="Carrinho" class="sidebar-icon">
+            <a href="#">Carrinho</a>
+        </div>
+    </aside>
+
+    <footer>
+        <p>&copy; 2025. Woman's Sports Fashion by LMelo.</p>
+    </footer>
+
+    <script>
+        // Função para adicionar produto ao carrinho
+        function adicionarAoCarrinho(produtoNome, produtoPreco) {
+            // Cria um objeto para o item no carrinho
+            const produto = {
+                nome: produtoNome,
+                preco: produtoPreco
+            };
+    
+            // Exibe o item adicionado no console
+            console.log(`Adicionado com sucesso!: ${produto.nome} - R$ ${produto.preco}`);
+        
+            // Mensagem de sucesso na tela (opcional)
+            alert(`${produto.nome} foi adicionado(a) ao carrinho!`);
+        }
+    </script>
+</body>
+</html>

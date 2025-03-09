@@ -1,0 +1,201 @@
+/* Estilo básico */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #41644A;
+    color: #E9762B;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icone-header {
+    width: 160px;
+    height: auto;
+}
+
+/* Background da seção */
+.background {
+    background-image: url('imagens/background.jpg'); /* Adapte o caminho da imagem */
+    background-size: cover;
+    color: white;
+    padding: 60px 20px;
+}
+
+.background h2 {
+    font-size: 2.5em;
+}
+
+/* Estilo do catálogo */
+.catalogo {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    margin-top: -300px; /* Subir ainda mais os produtos */
+}
+
+.produto {
+    background: rgb(204, 204, 204);
+    padding: 15px;
+    border-radius: 25px;
+    width: 250px;
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.produto:hover img {
+    transform: scale(1.1); /* Aumenta a imagem em 10% ao passar o mouse */
+}
+
+.produto h2 {
+    font-size: 1.5em;
+}
+
+.descricao {
+    font-style: italic; /* Fonte itálica */
+    font-size: 1em;
+}
+
+.preco-comprar {
+    display: contents;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+
+.preco {
+    font-size: 1.2em;
+    color: green;
+    font-weight: bold;
+   text-align: left;
+}
+
+.adicionar {
+    padding: 1px;
+    background-color: #41644A;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.adicionar:hover {
+    background-color: #E9762B;
+}
+
+/* Estilo da Sidebar (flutuante, à direita) */
+.sidebar {
+    position: fixed; /* Fixa a sidebar na tela */
+    top: 20%;
+    right: 0;
+    background-color: #D3D3D3; /* Cor cinza claro */
+    padding: 20px;
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Para garantir que fique sobre o conteúdo */
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar a {
+    color: #010101; /* Cor do link */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background-color: #f86b29;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Estilo do Rodapé */
+footer {
+    background-color: #41644A;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+/* Estilos para o Carrinho */
+.carrinho {
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: 20px;
+}
+
+.carrinho h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.item-carrinho {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.finalizar {
+    padding: 10px 20px;
+    background-color: #41644A;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.finalizar:hover {
+    background-color: #E9762B;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .catalogo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produto {
+        width: 80%;
+    }
+}

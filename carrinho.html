@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/mulher.png" alt="Ícone" class="icone-header">
+        <h1>Woman's Sports Fashion - Carrinho</h1>
+    </header>
+
+    <section class="carrinho">
+        <h2>Itens do Carrinho:</h2>
+        <div id="produtos-carrinho"></div>
+        <div id="total-carrinho"></div>
+        <button class="finalizar" onclick="finalizarCompra()">Finalizar a compra!</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025. Woman's Sports Fashion.</p>
+    </footer>
+
+    <script>
+        // Função para exibir os itens no carrinho
+        function exibirCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const produtosCarrinho = document.getElementById('produtos-carrinho');
+            const totalCarrinho = document.getElementById('total-carrinho');
+
+            if (carrinho.length === 0) {
+                produtosCarrinho.innerHTML = '<p>Seu carrinho está vazio.</p>';
+            } else {
+                let total = 0;
+                produtosCarrinho.innerHTML = '';
+
+                carrinho.forEach(item => {
+                    produtosCarrinho.innerHTML += `
+                        <div class="item-carrinho">
+                            <h3>${item.nome}</h3>
+                            <p>Preço: R$ ${item.preco}</p>
+                        </div>
+                    `;
+                    total += parseFloat(item.preco.replace('R$', '').replace(',', '.'));
+                });
+
+                totalCarrinho.innerHTML = `<p><strong>Total: R$ ${total.toFixed(2)}</strong></p>`;
+            }
+        }
+
+        // Função para finalizar a compra (ainda sem ação real)
+        function finalizarCompra() {
+            alert('A compra foi finalizada com sucesso!');
+            localStorage.removeItem('carrinho'); // Limpar carrinho após finalização
+            exibirCarrinho(); // Atualizar a exibição do carrinho
+        }
+
+        // Carregar carrinho ao carregar a página
+        window.onload = exibirCarrinho;
+    </script>
+</body>
+</html>
